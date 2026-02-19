@@ -1,18 +1,36 @@
 window.addEventListener("load", () => {
+
   const loader = document.getElementById("medicalLoader");
+  const mainContent = document.querySelector("main");
 
-  if (loader) {
+  const LOADER_TIME = 2500;
+
+  setTimeout(() => {
+
+    /* Fade loader */
+    loader.style.opacity = "0";
+
     setTimeout(() => {
-      loader.classList.add("hide");
 
-      setTimeout(() => {
-        loader.style.display = "none";
-        AOS.refreshHard();
-      }, 800);
+      loader.style.display = "none";
 
-    }, 2200);
-  }
+      /* Show main with transform */
+      mainContent.style.visibility = "visible";
+      mainContent.style.opacity = "1";
+      mainContent.style.transform = "translateY(0)";
+
+      /* 🔥 Prepare AOS positions */
+      AOS.refreshHard();
+
+      /* 🔥 Trigger AOS manually */
+      document.dispatchEvent(new Event("aos:ready"));
+
+    }, 600); // match CSS transition
+
+  }, LOADER_TIME);
+
 });
+
 
 
 
