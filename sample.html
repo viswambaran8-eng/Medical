@@ -124,95 +124,149 @@
 
     <div class="overlay" id="overlay"></div>
 
-    <section class="Structure">
-      <div class="login-wrapper">
-        <div class="login-card">
-          <!-- LEFT SIDE -->
-          <div class="login-left">
-            <h1>Welcome back to <span>Stackly Medical</span></h1>
+    <div class="services">
 
-            <ul>
-              <li>✔ One account for appointments & reports</li>
-              <li>✔ Secure medical data protection</li>
-              <li>✔ Fast & smooth healthcare access</li>
-            </ul>
+<!-- 1 -->
+<div class="wrap">
+  <div class="overlay">
+    <div class="overlay-content">
+      <h1>Angioplasty</h1>
+      <p class="dept">Interventional Cardiology</p>
+    </div>
+    <div class="image-content"
+      style="background-image:url('https://images.unsplash.com/photo-1588776814546-ec7e6fdd7c3e?auto=format&fit=crop&w=900&q=80');">
+    </div>
+  </div>
+  <div class="text">
+    <p>Minimally invasive procedure to open blocked coronary arteries.</p>
+    <p>Advanced catheter-based techniques ensure faster recovery.</p>
+    <p>24/7 emergency cardiac intervention services available.</p>
+  </div>
+</div>
 
-            <div class="tip">
-              Tip: Press <strong>Tab</strong> to move fields
-            </div>
-          </div>
+<!-- 2 -->
+<div class="wrap">
+  <div class="overlay">
+    <div class="overlay-content">
+      <h1>Cardiology</h1>
+      <p class="dept">Heart Care</p>
+    </div>
+    <div class="image-content"
+      style="background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80');">
+    </div>
+  </div>
+  <div class="text">
+    <p>Diagnosis and treatment of heart disorders.</p>
+    <p>ECG, stress testing & advanced cardiac procedures.</p>
+    <p>Preventive cardiology programs reduce long-term risks.</p>
+  </div>
+</div>
 
-          <!-- RIGHT SIDE -->
-          <div class="login-right">
-            <h2>Log in</h2>
-            <p>Access your dashboard and manage care.</p>
+<!-- 3 -->
+<div class="wrap">
+  <div class="overlay">
+    <div class="overlay-content">
+      <h1>Dental Care</h1>
+      <p class="dept">Oral Health</p>
+    </div>
+    <div class="image-content"
+      style="background-image:url('https://images.unsplash.com/photo-1588774069410-84ae30757c8e?auto=format&fit=crop&w=900&q=80');">
+    </div>
+  </div>
+  <div class="text">
+    <p>Complete dental services including cleaning & implants.</p>
+    <p>Advanced sterilization ensures safe treatment.</p>
+    <p>Smile makeover solutions available.</p>
+  </div>
+</div>
 
-            <form id="loginForm">
-              <div class="input-group">
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="you@hospital.com"
-                  required
-                />
-              </div>
+<!-- 4 -->
+<div class="wrap">
+  <div class="overlay">
+    <div class="overlay-content">
+      <h1>Eye Care</h1>
+      <p class="dept">Ophthalmology</p>
+    </div>
+    <div class="image-content"
+      style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80');">
+    </div>
+  </div>
+  <div class="text">
+    <p>Cataract, glaucoma & laser eye procedures.</p>
+    <p>Advanced technology for safe vision correction.</p>
+    <p>Comprehensive eye exams available.</p>
+  </div>
+</div>
 
-              <div class="input-group password-group">
-                <input
-                  type="password"
-                  id="password"
-                  placeholder="Password"
-                  required
-                />
-                <span id="togglePassword">Show</span>
-              </div>
+<!-- 5 -->
+<div class="wrap">
+  <div class="overlay">
+    <div class="overlay-content">
+      <h1>Endocrinology</h1>
+      <p class="dept">Hormonal Care</p>
+    </div>
+    <div class="image-content"
+      style="background-image:url('https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=900&q=80');">
+    </div>
+  </div>
+  <div class="text">
+    <p>Diabetes & thyroid disorder treatment.</p>
+    <p>Personalized metabolic health plans.</p>
+    <p>Advanced lab diagnostics available.</p>
+  </div>
+</div>
 
-              <a href="#" class="forgot">Forgot password?</a>
+<!-- 6 -->
+<div class="wrap">
+  <div class="overlay">
+    <div class="overlay-content">
+      <h1>Orthopaedics</h1>
+      <p class="dept">Bone & Joint Care</p>
+    </div>
+    <div class="image-content"
+      style="background-image:url('https://images.unsplash.com/photo-1580281657527-47d88d0d50d8?auto=format&fit=crop&w=900&q=80');">
+    </div>
+  </div>
+  <div class="text">
+    <p>Fracture, arthritis & sports injury care.</p>
+    <p>Modern robotic-assisted joint replacement.</p>
+    <p>Rehabilitation programs for faster recovery.</p>
+  </div>
+</div>
 
-              <button type="submit" class="login-btn">Log in</button>
-
-              <p class="signup">New here? <a href="#">Create an account</a></p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+</div>
 
 
-    <script>
-      AOS.init({
-        once: true,
-        duration: 1000,
-        easing: "ease-out-cubic",
-        startEvent: "aos:ready", // manual trigger
-      });
-    </script>
+<script>
+  // GSAP Entrance Animation
 
-    <script>
-      const togglePassword = document.getElementById("togglePassword");
-      const password = document.getElementById("password");
-      const form = document.getElementById("loginForm");
+gsap.from(".wrap", {
+  opacity: 0,
+  y: 80,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power3.out"
+});
 
-      togglePassword.addEventListener("click", () => {
-        const type = password.type === "password" ? "text" : "password";
-        password.type = type;
-        togglePassword.textContent = type === "password" ? "Show" : "Hide";
-      });
+gsap.from(".overlay-content h1", {
+  x: -40,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.2,
+  delay: 0.5,
+  ease: "power3.out"
+});
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const email = document.getElementById("email").value;
-        const pass = password.value;
-
-        if (email === "" || pass === "") {
-          alert("Please fill all fields");
-        } else {
-          alert("Login successful (demo)");
-        }
-      });
-    </script>
-
-    <script src="./script.js"></script>
+gsap.from(".text p", {
+  opacity: 0,
+  y: 30,
+  duration: 1,
+  stagger: 0.15,
+  delay: 0.8,
+  ease: "power3.out"
+});
+</script>
+    
+    <!-- <script src="./script.js"></script> -->
   </body>
 </html>
