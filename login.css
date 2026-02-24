@@ -12,6 +12,7 @@ body {
   /* color: white; */
   font-family: "lora", serif;
   overflow-x: hidden;
+  background-color: #f4f9ff;
 }
 
 button {
@@ -30,7 +31,6 @@ header {
   align-items: center;
   position: fixed;
   top: 0;
-  overflow: hidden;
   z-index: 1099;
 }
 
@@ -78,7 +78,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
-  overflow-x: hidden;
   font-size: x-large;
   font-family: "Roboto Slab", serif;
   font-weight: 700;
@@ -98,7 +97,6 @@ header {
   font-weight: 700;
   text-decoration: none;
   color: #0252a9;
-
 }
 
 nav ul {
@@ -110,6 +108,7 @@ nav ul {
 
 nav ul li {
   list-style: none;
+  position: relative;
 }
 
 nav ul li a {
@@ -118,13 +117,6 @@ nav ul li a {
   text-decoration: none;
   position: relative;
   color: #0252a9;
-}
-
-nav ul li a:hover {
-  /* text-shadow:
-    0 0 5px rgba(192, 192, 192, 0.9),
-    0 0 5px rgba(192, 192, 192, 0.7),
-    0 0 5px rgba(192, 192, 192, 0.5); */
 }
 
 nav ul li a::after {
@@ -141,6 +133,81 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
   width: 100%;
+}
+
+/* --- The Dropdown Container Layout --- */
+.dropdown {
+  display: flex;
+  align-items: center;
+  z-index: 10000;
+}
+
+/* --- The Toggle (Caret) Specific Styling --- */
+.drop-toggle {
+  cursor: pointer;
+  margin-left: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px; /* Increases clickable area for the arrow */
+}
+
+.drop-toggle i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  pointer-events: none; /* Ensures the click registers on the span */
+}
+
+/* --- The Dropdown Menu --- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Sits right below the nav item */
+  left: 0;
+  background: aliceblue;
+  width: max-content;
+  min-width: 150px;
+  padding: 5px 10px 15px 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  
+  /* Hidden State */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  list-style: none;
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu li {
+  padding: 0;
+  display: block;
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.dropdown-menu li a:hover {
+  /* background-color: rgba(2, 82, 169, 0.05); */
+}
+
+/* --- Active States (Triggered by JS) --- */
+
+/* Show the menu */
+.dropdown.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Rotate the caret icon */
+.dropdown.active .drop-toggle i {
+  transform: rotate(180deg);
 }
 
 /* MobileBar Hamburger */
@@ -190,7 +257,7 @@ nav ul li a:hover::after {
   display: none; /* Hidden by default */
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1180px) {
   .mobilebar {
     display: flex;
     justify-content: center;
@@ -247,6 +314,11 @@ nav ul li a:hover::after {
   overflow: hidden;
   max-width: fit-content;
   border: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0252a9;
 }
 
 .btn::after {
@@ -274,11 +346,11 @@ a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1180px) {
   .mobilebar {
     display: block;
   }
-  .btn {
+  .header2 .btn {
     display: none;
   }
 
@@ -330,8 +402,7 @@ a {
   font-weight: 600;
 }
 
-@media screen and (max-width: 1000px) {
-  
+@media screen and (max-width: 1180px) {
   .subheader {
     text-align: center;
     flex-direction: column;
@@ -354,7 +425,6 @@ a {
   .subheader {
     display: block;
   }
-
 }
 
 @media screen and (max-width: 500px) {
@@ -362,7 +432,6 @@ a {
     font-size: small;
   }
 }
-
 
 /* Sidebar */
 
@@ -382,7 +451,7 @@ body.no-scroll {
   left: -100%;
   width: 100%;
   height: 100vh;
-  background: white; 
+  background: #f8fbff;
   padding: 120px 30px;
   transition: left 0.4s ease;
   z-index: 999;
@@ -401,7 +470,7 @@ body.no-scroll {
 }
 
 .sidebar ul {
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -482,7 +551,7 @@ body.no-scroll {
   }
 }
 
-@media screen and (min-width: 1001px) {
+@media screen and (min-width: 1181px) {
   .sidebar {
     display: none;
   }
@@ -491,6 +560,9 @@ body.no-scroll {
 @media screen and (max-width: 700px) {
   .sidebar {
     gap: 50px;
+  }
+  .sidebar ul {
+    gap: 15px;
   }
 }
 
@@ -510,7 +582,7 @@ body.no-scroll {
 @media screen and (max-width: 650px) {
   .sidebar {
     font-size: larger;
-    padding: 100px 30px;
+    padding: 90px 30px;
   }
   .sidebar-login .login-btn {
     padding: 10px 15px;
@@ -521,7 +593,68 @@ body.no-scroll {
   }
 }
 
-/* ---------------------------------------------------------------------------------------- */
+/* --- Menu Item Borders --- */
+.menu-item {
+  border-bottom: 1px solid rgba(2, 82, 169, 0.1); /* Subtle blue border */
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+/* --- Dropdown Logic --- */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.drop-caret {
+  cursor: pointer;
+  color: #0252a9;
+  padding: 5px 15px;
+  transition: transform 0.4s ease;
+  font-size: 24px;
+}
+
+.drop-caret.rotate {
+  transform: rotate(180deg);
+}
+
+/* --- Submenu (Hidden by default) --- */
+.submenu {
+  max-height: 0; /* Changed from 100% to 0 */
+  overflow: hidden;
+  list-style: none;
+  background: rgba(2, 82, 169, 0.03);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.4s ease-in-out;
+  padding: 0 5px;
+}
+
+.submenu.open {
+  max-height: 200px; /* Adjust based on content */
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.submenu li a {
+  font-size: 20px !important;
+  color:#0252a9  !important;
+  font-weight: 500 !important;
+}
+
+/* --- Hover Effects --- */
+.sidebar ul li a:hover {
+  color: #0d6efd !important;
+  padding-left: 10px;
+}
+
+.sidebar ul li a {
+  transition: all 0.3s ease;
+}
 
 /* ================= PREMIUM MEDICAL LOADER ================= */
 

@@ -19,27 +19,7 @@
     />
   </head>
   <body>
-    <!-- Premium Medical Loader -->
-    <div class="medical-loader" id="medicalLoader">
-      <div class="loader-wrapper">
-        <div class="medical-cross">
-          <span></span>
-          <span></span>
-        </div>
 
-        <div class="ecg-line">
-          <svg viewBox="0 0 500 100" preserveAspectRatio="none">
-            <path
-              d="M0 50 L70 50 L90 20 L110 80 L130 50 L200 50 L220 30 L240 70 L260 50 L500 50"
-            />
-          </svg>
-        </div>
-
-        <h3 class="loading-text">Preparing Your Care Experience...</h3>
-      </div>
-    </div>
-
-    <div class="the-main">
       <header>
         <div class="header1">
           <div class="container1">
@@ -62,19 +42,32 @@
               <img src="./Assets/logo-stackly.webp" alt="Logo" />
             </a>
           </div>
+
           <nav>
             <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./error.html">About</a></li>
-              <li><a href="./error.html">Services</a></li>
-              <li><a href="./error.html">Blog</a></li>
-              <li><a href="./error.html">Contact Us</a></li>
+              <li class="dropdown">
+                <a href="./index.html">Home</a>
+
+                <span class="drop-toggle">
+                  <i class="fa-solid fa-caret-down"></i>
+                </span>
+
+                <ul class="dropdown-menu">
+                  <li><a href="./index2.html">Home 2</a></li>
+                </ul>
+              </li>
+
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+              <li><a href="./dashboard.html">Dashboard</a></li>
             </ul>
           </nav>
 
           <div class="icons">
             <div class="login">
-              <a class="btn" href="./error.html">Appointment</a>
+              <a class="btn" href="./app.html">Appointment</a>
 
               <a href="./login.html">
                 <i class="fa-regular fa-circle-user"></i>
@@ -96,30 +89,43 @@
 
       <div class="sidebar" id="sidebar">
         <ul>
-          <li data-aos="fade-up-right" data-aos-delay="100">
-            <a href="./error.html">Home</a>
+          <li
+            class="has-dropdown menu-item"
+            data-aos="fade-up-right"
+            data-aos-delay="100"
+          >
+            <div class="dropdown-header">
+              <a href="./index.html">Home</a>
+              <span class="drop-caret" id="home-caret">▾</span>
+            </div>
+            <ul class="submenu" id="home-dropdown">
+              <li><a href="./index2.html">Home 2</a></li>
+            </ul>
           </li>
-          <li data-aos="fade-up-right" data-aos-delay="150">
-            <a href="./error.html">About</a>
+
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="150">
+            <a href="./about.html">About</a>
           </li>
-          <li data-aos="fade-up-right" data-aos-delay="200">
-            <a href="./error.html">Services</a>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="200">
+            <a href="./service.html">Services</a>
           </li>
-          <li data-aos="fade-up-right" data-aos-delay="250">
-            <a href="./error.html">Blog</a>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="250">
+            <a href="./blog.html">Blog</a>
           </li>
-          <li data-aos="fade-up-right" data-aos-delay="300">
-            <a href="./error.html">Contact Us</a>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="300">
+            <a href="./contact.html">Contact Us</a>
+          </li>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="350">
+            <a href="./dashboard.html">Dashboard</a>
+          </li>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="400">
+            <a href="./login.html">Login</a>
           </li>
         </ul>
 
         <div class="sidebar-login">
-          <a href="./login.html" data-aos="fade-up">
-            <button class="login-btn">Login</button>
-          </a>
-
-          <a href="./error.html" data-aos="fade-up">
-            <button class="login-btn">Schedule a Appointment</button>
+          <a href="./app.html" data-aos="fade-up">
+            <button class="login-btn">Book an Appointment</button>
           </a>
         </div>
       </div>
@@ -247,7 +253,6 @@
           window.location.href = "login.html";
         });
       </script>
-    </div>
   </body>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

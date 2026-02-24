@@ -89,20 +89,13 @@ if (homeCaret) {
         homeCaret.classList.toggle("rotate");
     });
 }
+// 4. CLOSE SIDEBAR (OVERLAY CLICK)
 
-// 4. OVERLAY CLICK LOGIC (CLOSE EVERYTHING)
 overlay.addEventListener("click", () => {
-    // Close sidebar elements
-    hamburger.classList.remove("active");
-    sidebar.classList.remove("active");
-    overlay.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-    
-    // Reset dropdown state so it's closed next time you open sidebar
-    if (homeDropdown) {
-        homeDropdown.classList.remove("open");
-        homeCaret.classList.remove("rotate");
-    }
+  hamburger.classList.remove("active");
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.classList.remove("no-scroll");
 });
 
 // Drop Down

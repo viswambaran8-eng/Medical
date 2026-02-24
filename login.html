@@ -19,191 +19,198 @@
     />
   </head>
   <body>
-    <!-- Premium Medical Loader -->
-    <div class="medical-loader" id="medicalLoader">
-      <div class="loader-wrapper">
-        <div class="medical-cross">
-          <span></span>
-          <span></span>
+    <header>
+      <div class="header1">
+        <div class="container1">
+          <h3>Welcome To Stackly Medical Health-Care Services.</h3>
         </div>
-
-        <div class="ecg-line">
-          <svg viewBox="0 0 500 100" preserveAspectRatio="none">
-            <path
-              d="M0 50 L70 50 L90 20 L110 80 L130 50 L200 50 L220 30 L240 70 L260 50 L500 50"
-            />
-          </svg>
+        <div class="container2">
+          <div>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p>(123)456-7890</p>
+          </div>
+          <div>
+            <i class="fa-regular fa-envelope"></i>
+            <p>Support@stackly.com</p>
+          </div>
         </div>
-
-        <h3 class="loading-text">Preparing Your Care Experience...</h3>
       </div>
-    </div>
-
-    <div class="the-main">
-      <header>
-        <div class="header1">
-          <div class="container1">
-            <h3>Welcome To Stackly Medical Health-Care Services.</h3>
-          </div>
-          <div class="container2">
-            <div>
-              <i class="fa-solid fa-phone-volume"></i>
-              <p>(123)456-7890</p>
-            </div>
-            <div>
-              <i class="fa-regular fa-envelope"></i>
-              <p>Support@stackly.com</p>
-            </div>
-          </div>
+      <div class="header2">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo-stackly.webp" alt="Logo" />
+          </a>
         </div>
-        <div class="header2">
-          <div class="logo">
-            <a href="./index.html">
-              <img src="./Assets/logo-stackly.webp" alt="Logo" />
+
+        <nav>
+          <ul>
+            <li class="dropdown">
+              <a href="./index.html">Home</a>
+
+              <span class="drop-toggle">
+                <i class="fa-solid fa-caret-down"></i>
+              </span>
+
+              <ul class="dropdown-menu">
+                <li><a href="./index2.html">Home 2</a></li>
+              </ul>
+            </li>
+
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./service.html">Services</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+            <li><a href="./dashboard.html">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <div class="icons">
+          <div class="login">
+            <a class="btn" href="./app.html">Appointment</a>
+
+            <a href="./login.html">
+              <i class="fa-regular fa-circle-user"></i>
             </a>
           </div>
-          <nav>
-            <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./error.html">About</a></li>
-              <li><a href="./error.html">Services</a></li>
-              <li><a href="./error.html">Blog</a></li>
-              <li><a href="./error.html">Contact Us</a></li>
-            </ul>
-          </nav>
 
-          <div class="icons">
-            <div class="login">
-              <a class="btn" href="./error.html">Appointment</a>
-
-              <a href="./login.html">
-                <i class="fa-regular fa-circle-user"></i>
-              </a>
-            </div>
-
-            <div class="mobilebar">
-              <div class="hamburger-box">
-                <div class="hamburger">
-                  <div class="line line1"></div>
-                  <div class="line line2"></div>
-                  <div class="line line3"></div>
-                </div>
+          <div class="mobilebar">
+            <div class="hamburger-box">
+              <div class="hamburger">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
-
-      <div class="sidebar" id="sidebar">
-        <ul>
-          <li data-aos="fade-up-right" data-aos-delay="100">
-            <a href="./error.html">Home</a>
-          </li>
-          <li data-aos="fade-up-right" data-aos-delay="150">
-            <a href="./error.html">About</a>
-          </li>
-          <li data-aos="fade-up-right" data-aos-delay="200">
-            <a href="./error.html">Services</a>
-          </li>
-          <li data-aos="fade-up-right" data-aos-delay="250">
-            <a href="./error.html">Blog</a>
-          </li>
-          <li data-aos="fade-up-right" data-aos-delay="300">
-            <a href="./error.html">Contact Us</a>
-          </li>
-        </ul>
-
-        <div class="sidebar-login">
-          <a href="./login.html" data-aos="fade-up">
-            <button class="login-btn">Login</button>
-          </a>
-
-          <a href="./error.html" data-aos="fade-up">
-            <button class="login-btn">Schedule a Appointment</button>
-          </a>
         </div>
       </div>
+    </header>
 
-      <main>
-        <div class="subheader">
-          <div class="container1">
-            <h3>Welcome To Stackly Medical Health-Care Services.</h3>
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li
+          class="has-dropdown menu-item"
+          data-aos="fade-up-right"
+          data-aos-delay="100"
+        >
+          <div class="dropdown-header">
+            <a href="./index.html">Home</a>
+            <span class="drop-caret" id="home-caret">▾</span>
           </div>
-          <div class="container2">
-            <div>
-              <i class="fa-solid fa-phone-volume"></i>
-              <p>(123)456-7890</p>
-            </div>
-            <div>
-              <i class="fa-regular fa-envelope"></i>
-              <p>Support@stackly.com</p>
-            </div>
-          </div>
-        </div>
-      </main>
+          <ul class="submenu" id="home-dropdown">
+            <li><a href="./index2.html">Home 2</a></li>
+          </ul>
+        </li>
 
-      <div class="overlay" id="overlay"></div>
+        <li class="menu-item" data-aos="fade-up-right" data-aos-delay="150">
+          <a href="./about.html">About</a>
+        </li>
+        <li class="menu-item" data-aos="fade-up-right" data-aos-delay="200">
+          <a href="./service.html">Services</a>
+        </li>
+        <li class="menu-item" data-aos="fade-up-right" data-aos-delay="250">
+          <a href="./blog.html">Blog</a>
+        </li>
+        <li class="menu-item" data-aos="fade-up-right" data-aos-delay="300">
+          <a href="./contact.html">Contact Us</a>
+        </li>
+        <li class="menu-item" data-aos="fade-up-right" data-aos-delay="350">
+          <a href="./dashboard.html">Dashboard</a>
+        </li>
+        <li class="menu-item" data-aos="fade-up-right" data-aos-delay="400">
+          <a href="./login.html">Login</a>
+        </li>
+      </ul>
 
-      <section class="Structure">
-        <div class="login-wrapper">
-          <div class="login-card">
-            <!-- LEFT SIDE -->
-            <div class="login-left">
-              <h1>Welcome back to <span>Stackly Medical</span></h1>
-
-              <ul>
-                <li>✔ One account for appointments & reports</li>
-                <li>✔ Secure medical data protection</li>
-                <li>✔ Fast & smooth healthcare access</li>
-                <li>✔ Access to your medical history</li>
-              </ul>
-
-              <div class="tip">
-                Tip: Press <a href="./error.html" class="tabb">
-                  <strong>Tab</strong>
-                </a>    to move fields
-              </div>
-            </div>
-
-            <!-- RIGHT SIDE -->
-            <div class="login-right">
-              <h2>Log-in</h2>
-              <p>Access your Dashboard and Manage with Care.</p>
-
-              <form id="loginForm">
-                <div class="input-group email-group">
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="you@gmail.com"
-                    required
-                  />
-                </div>
-
-                <div class="input-group password-group">
-                  <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                    required
-                  />
-                  <span id="togglePassword">Show</span>
-                </div>
-
-                <a href="./forgotpassword.html" class="forgot">Forgot password?</a>
-
-                <button type="submit" class="login-btn1">Log in</button>
-
-                <div class="signup">
-                 <p> New here? <a href="./signout.html">Create an account</a></p> 
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <div class="sidebar-login">
+        <a href="./app.html" data-aos="fade-up">
+          <button class="login-btn">Book an Appointment</button>
+        </a>
+      </div>
     </div>
+
+    <main>
+      <div class="subheader">
+        <div class="container1">
+          <h3>Welcome To Stackly Medical Health-Care Services.</h3>
+        </div>
+        <div class="container2">
+          <div>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p>(123)456-7890</p>
+          </div>
+          <div>
+            <i class="fa-regular fa-envelope"></i>
+            <p>Support@stackly.com</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="Structure">
+      <div class="login-wrapper">
+        <div class="login-card">
+          <!-- LEFT SIDE -->
+          <div class="login-left">
+            <h1>Welcome back to <span>Stackly Medical</span></h1>
+
+            <ul>
+              <li>✔ One account for appointments & reports</li>
+              <li>✔ Secure medical data protection</li>
+              <li>✔ Fast & smooth healthcare access</li>
+              <li>✔ Access to your medical history</li>
+            </ul>
+
+            <div class="tip">
+              Tip: Press
+              <a href="./error.html" class="tabb">
+                <strong>Tab</strong>
+              </a>
+              to move fields
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE -->
+          <div class="login-right">
+            <h2>Log-in</h2>
+            <p>Access your Dashboard and Manage with Care.</p>
+
+            <form id="loginForm">
+              <div class="input-group email-group">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="you@gmail.com"
+                  required
+                />
+              </div>
+
+              <div class="input-group password-group">
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+                <span id="togglePassword">Show</span>
+              </div>
+
+              <a href="./forgotpassword.html" class="forgot"
+                >Forgot password?</a
+              >
+
+              <button type="submit" class="login-btn1">Log in</button>
+
+              <div class="signup">
+                <p>New here? <a href="./signout.html">Create an account</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -219,45 +226,45 @@
   </script>
 
   <script>
-  const togglePassword = document.getElementById("togglePassword");
-  const password = document.getElementById("password");
-  const form = document.getElementById("loginForm");
+    const togglePassword = document.getElementById("togglePassword");
+    const password = document.getElementById("password");
+    const form = document.getElementById("loginForm");
 
-  // Show / Hide Password
-  togglePassword.addEventListener("click", () => {
-    const type = password.type === "password" ? "text" : "password";
-    password.type = type;
-    togglePassword.textContent = type === "password" ? "Show" : "Hide";
-  });
+    // Show / Hide Password
+    togglePassword.addEventListener("click", () => {
+      const type = password.type === "password" ? "text" : "password";
+      password.type = type;
+      togglePassword.textContent = type === "password" ? "Show" : "Hide";
+    });
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const pass = password.value.trim();
+      const email = document.getElementById("email").value.trim();
+      const pass = password.value.trim();
 
-    // Gmail validation
-    const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+      // Gmail validation
+      const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
-    // Password validation
-    const passwordPattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+      // Password validation
+      const passwordPattern =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
 
-    if (!gmailPattern.test(email)) {
-      alert("Email must end with @gmail.com");
-      return;
-    }
+      if (!gmailPattern.test(email)) {
+        alert("Email must end with @gmail.com");
+        return;
+      }
 
-    if (!passwordPattern.test(pass)) {
-      alert(
-        "Password must contain:\n- Uppercase letter\n- Lowercase letter\n- Number\n- Special symbol\n- Minimum 6 characters"
-      );
-      return;
-    }
+      if (!passwordPattern.test(pass)) {
+        alert(
+          "Password must contain:\n- Uppercase letter\n- Lowercase letter\n- Number\n- Special symbol\n- Minimum 6 characters",
+        );
+        return;
+      }
 
-    alert("Login successful (demo)");
-  });
-</script>
+      alert("Login successful (demo)");
+    });
+  </script>
 
   <script src="./script.js"></script>
 </html>

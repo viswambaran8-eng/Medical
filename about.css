@@ -1011,6 +1011,7 @@ main {
   width: 100%;
   padding: 100px 30px;
   background: #f4f9ff;
+  overflow-x: hidden;
 }
 
 .about-container {

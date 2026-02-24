@@ -19,28 +19,7 @@
     />
   </head>
   <body>
-    <!-- Premium Medical Loader -->
-    <div class="medical-loader" id="medicalLoader">
-      <div class="loader-wrapper">
-        <div class="medical-cross">
-          <span></span>
-          <span></span>
-        </div>
-
-        <div class="ecg-line">
-          <svg viewBox="0 0 500 100" preserveAspectRatio="none">
-            <path
-              d="M0 50 L70 50 L90 20 L110 80 L130 50 L200 50 L220 30 L240 70 L260 50 L500 50"
-            />
-          </svg>
-        </div>
-
-        <h3 class="loading-text">Preparing Your Care Experience...</h3>
-      </div>
-    </div>
-
-    <div class="the-main">
-      <header>
+    <header>
         <div class="header1">
           <div class="container1">
             <h3>Welcome To Stackly Medical Health-Care Services.</h3>
@@ -77,10 +56,10 @@
                 </ul>
               </li>
 
-              <li><a href="./health_packages">Health Packages</a></li>
-              <li><a href="./Treatments">Treatments</a></li>
-              <li><a href="./Patient">Patient Resources</a></li>
-              <li><a href="./contact.html">Contact Us</a></li>
+              <li><a href="./health.html">Health Packages</a></li>
+              <li><a href="./treatments.html">Treatments</a></li>
+              <li><a href="./patient.html">Patient Resources</a></li>
+              <li><a href="./contact2.html">Contact Us</a></li>
             </ul>
           </nav>
 
@@ -140,136 +119,132 @@
         </ul>
 
         <div class="sidebar-login">
-          <a href="./error.html" data-aos="fade-up">
+          <!-- <a href="./error.html" data-aos="fade-up">
             <button class="login-btn">Book an Appointment</button>
-          </a>
+          </a> -->
         </div>
       </div>
 
-      <main>
-        <div class="subheader">
-          <div class="container1">
-            <h3>Welcome To Stackly Medical Health-Care Services.</h3>
+    <main>
+      <div class="subheader">
+        <div class="container1">
+          <h3>Welcome To Stackly Medical Health-Care Services.</h3>
+        </div>
+        <div class="container2">
+          <div>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p>(123)456-7890</p>
           </div>
-          <div class="container2">
-            <div>
-              <i class="fa-solid fa-phone-volume"></i>
-              <p>(123)456-7890</p>
-            </div>
-            <div>
-              <i class="fa-regular fa-envelope"></i>
-              <p>Support@stackly.com</p>
-            </div>
+          <div>
+            <i class="fa-regular fa-envelope"></i>
+            <p>Support@stackly.com</p>
           </div>
         </div>
-      </main>
+      </div>
+    </main>
 
-      <div class="overlay" id="overlay"></div>
+    <div class="overlay" id="overlay"></div>
 
-      <section class="Structure">
-        <div class="signout-wrapper">
-          <div class="signout-card">
-            <!-- LEFT SIDE -->
-            <div class="signout-left">
-              <h1>Confirm Sign-out from <span>Stackly Medical</span></h1>
+    <section class="Structure">
+      <div class="signout-wrapper">
+        <div class="signout-card">
+          <!-- LEFT SIDE -->
+          <div class="signout-left">
+            <h1>Confirm Sign-out from <span>Stackly Medical</span></h1>
 
-              <ul>
-                <li>✔ Secure logout confirmation</li>
-                <li>✔ Protect your medical information</li>
-                <li>✔ Prevent unauthorized access</li>
-                <li>✔ Safe & encrypted session ending</li>
-              </ul>
+            <ul>
+              <li>✔ Secure logout confirmation</li>
+              <li>✔ Protect your medical information</li>
+              <li>✔ Prevent unauthorized access</li>
+              <li>✔ Safe & encrypted session ending</li>
+            </ul>
 
-              <div class="tip">
-                Tip: Re-enter credentials to sign out.
+            <div class="tip">Tip: Re-enter credentials to sign out.</div>
+          </div>
+
+          <!-- RIGHT SIDE -->
+          <div class="signout-right">
+            <h2>Sign-out</h2>
+            <p class="headings">Verify your account to complete logout.</p>
+
+            <form id="signoutForm">
+              <div class="input-group">
+                <input
+                  type="email"
+                  id="signoutEmail"
+                  placeholder="you@gmail.com"
+                  required
+                />
               </div>
-            </div>
 
-            <!-- RIGHT SIDE -->
-            <div class="signout-right">
-              <h2>Sign-out</h2>
-              <p class="headings">Verify your account to complete logout.</p>
+              <div class="input-group password-group">
+                <input
+                  type="password"
+                  id="signoutPassword"
+                  placeholder="Password"
+                  required
+                />
+                <span id="toggleSignoutPassword">Show</span>
+              </div>
 
-              <form id="signoutForm">
-                <div class="input-group">
-                  <input
-                    type="email"
-                    id="signoutEmail"
-                    placeholder="you@gmail.com"
-                    required
-                  />
-                </div>
-
-                <div class="input-group password-group">
-                  <input
-                    type="password"
-                    id="signoutPassword"
-                    placeholder="Password"
-                    required
-                  />
-                  <span id="toggleSignoutPassword">Show</span>
-                </div>
-
-                <button type="submit" class="signout-btn">
-                  Confirm Sign-out
-                </button>
-                <div class="link">
-                  <p class="links">
-                    Already Have An Account ? <a href="./login2.html">Sign-In</a>
-                  </p>
-                </div>
-              </form>
-            </div>
+              <button type="submit" class="signout-btn">
+                Confirm Sign-out
+              </button>
+              <div class="link">
+                <p class="links">
+                  Already Have An Account ? <a href="./login2.html">Sign-In</a>
+                </p>
+              </div>
+            </form>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <script>
-        const toggleSignoutPassword = document.getElementById(
-          "toggleSignoutPassword",
-        );
-        const signoutPassword = document.getElementById("signoutPassword");
-        const signoutForm = document.getElementById("signoutForm");
+    <script>
+      const toggleSignoutPassword = document.getElementById(
+        "toggleSignoutPassword",
+      );
+      const signoutPassword = document.getElementById("signoutPassword");
+      const signoutForm = document.getElementById("signoutForm");
 
-        // Show / Hide Password
-        toggleSignoutPassword.addEventListener("click", () => {
-          const type =
-            signoutPassword.type === "password" ? "text" : "password";
-          signoutPassword.type = type;
-          toggleSignoutPassword.textContent =
-            type === "password" ? "Show" : "Hide";
-        });
+      // Show / Hide Password
+      toggleSignoutPassword.addEventListener("click", () => {
+        const type = signoutPassword.type === "password" ? "text" : "password";
+        signoutPassword.type = type;
+        toggleSignoutPassword.textContent =
+          type === "password" ? "Show" : "Hide";
+      });
 
-        signoutForm.addEventListener("submit", (e) => {
-          e.preventDefault();
+      signoutForm.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-          const email = document.getElementById("signoutEmail").value.trim();
-          const pass = signoutPassword.value.trim();
+        const email = document.getElementById("signoutEmail").value.trim();
+        const pass = signoutPassword.value.trim();
 
-          // Gmail validation
-          const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        // Gmail validation
+        const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
-          // Password validation
-          const passwordPattern =
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+        // Password validation
+        const passwordPattern =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
 
-          if (!gmailPattern.test(email)) {
-            alert("Email must end with @gmail.com");
-            return;
-          }
+        if (!gmailPattern.test(email)) {
+          alert("Email must end with @gmail.com");
+          return;
+        }
 
-          if (!passwordPattern.test(pass)) {
-            alert(
-              "Password must contain:\n- Uppercase letter\n- Lowercase letter\n- Number\n- Special symbol\n- Minimum 6 characters",
-            );
-            return;
-          }
+        if (!passwordPattern.test(pass)) {
+          alert(
+            "Password must contain:\n- Uppercase letter\n- Lowercase letter\n- Number\n- Special symbol\n- Minimum 6 characters",
+          );
+          return;
+        }
 
-          alert("You have been securely signed out.");
-          window.location.href = "login2.html";
-        });
-      </script>
-    </div>
+        alert("You have been securely signed out.");
+        window.location.href = "login2.html";
+      });
+    </script>
   </body>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

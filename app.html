@@ -73,7 +73,7 @@
                 </span>
 
                 <ul class="dropdown-menu">
-                  <li><a href="./home2.html">Home 2</a></li>
+                  <li><a href="./index2.html">Home 2</a></li>
                 </ul>
               </li>
 
@@ -119,7 +119,7 @@
               <span class="drop-caret" id="home-caret">▾</span>
             </div>
             <ul class="submenu" id="home-dropdown">
-              <li><a href="./home2.html">Home 2</a></li>
+              <li><a href="./index2.html">Home 2</a></li>
             </ul>
           </li>
 
@@ -489,10 +489,10 @@
               medical technology and experienced specialists.
             </p>
             <div class="social-links">
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="./error.html"><i class="fa-brands fa-instagram"></i></a>
+              <a href="./error.html"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="./error.html"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="./error.html"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
           </div>
 
@@ -537,7 +537,6 @@
         </div>
       </footer>
 
-      <script src="script.js"></script>
 
       <div class="overlay" id="overlay"></div>
     </div>
@@ -559,7 +558,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <script src="./script.js"></script>
-  <!-- <script src="./gsap.js"></script> -->
+  <script src="./gsap.js"></script>
   <script src="./swiper.js"></script>
   <script src="./blog.js"></script>
 
@@ -630,7 +629,7 @@
           // Small delay to simulate a real booking process
           setTimeout(() => {
             // Success styling
-            btn.style.backgroundColor = "#10b981"; // Success Green
+            btn.style.backgroundColor = "./error.html10b981"; // Success Green
             btnText.textContent = "Booking Confirmed!";
             if (btnIcon) btnIcon.className = "fa-solid fa-check";
 
@@ -673,12 +672,12 @@
         // Simulate Booking Delay
         setTimeout(() => {
             // Success State
-            btn.style.background = "#10b981"; 
+            btn.style.background = "./error.html10b981"; 
             btnText.textContent = "Booked Successfully!";
             btnIcon.className = "fa-solid fa-check-double";
             
             gsap.to(btn, { scale: 1.05, duration: 0.4, ease: "back.out(2)" });
-            gsap.to(".booking-main", { backgroundColor: "#f0fdf4", duration: 0.5 });
+            gsap.to(".booking-main", { backgroundColor: "./error.htmlf0fdf4", duration: 0.5 });
 
             // THE ALERT
             alert("Your appointment has been booked! We will contact you shortly.");

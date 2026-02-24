@@ -1,11 +1,11 @@
-const extraBlogsContainer = document.getElementById('extraBlogs');
-const toggleBtn = document.getElementById('toggleBtn');
+const extraBlogsContainer = document.getElementById("extraBlogs");
+const toggleBtn = document.getElementById("toggleBtn");
 let isExpanded = false;
 
 const additionalMedicalBlogs = `
     <div class="blog-card" data-aos="zoom-in">
       <div class="blog-img">
-        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800" alt="Pediatrics">
+        <img src="./Assets/Pediatrics_11zon.webp" alt="Pediatrics">
       </div>
       <div class="blog-content">
         <span class="blog-tag">Pediatrics</span>
@@ -18,7 +18,7 @@ const additionalMedicalBlogs = `
 
     <div class="blog-card" data-aos="zoom-in" data-aos-delay="100">
       <div class="blog-img">
-        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800" alt="Laboratory">
+        <img src="./Assets/women wellness_11zon.webp" alt="">
       </div>
       <div class="blog-content">
         <span class="blog-tag">Research</span>
@@ -31,7 +31,7 @@ const additionalMedicalBlogs = `
 
     <div class="blog-card" data-aos="zoom-in" data-aos-delay="200">
       <div class="blog-img">
-        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800" alt="Telemedicine">
+          <img src="./Assets/telemedicne_11zon.webp" alt="Telemedicine">
       </div>
       <div class="blog-content">
         <span class="blog-tag">Telemedicine</span>
@@ -44,22 +44,23 @@ const additionalMedicalBlogs = `
 `;
 
 function handleToggleBlogs() {
-    if (!isExpanded) {
-        // Show More
-        extraBlogsContainer.innerHTML = additionalMedicalBlogs;
-        toggleBtn.innerHTML = "Show Less ↑";
-        isExpanded = true;
-        
-        // If you are using AOS, refresh it to recognize new elements
-        if (typeof AOS !== 'undefined') AOS.refresh();
-        
-    } else {
-        // Show Less
-        extraBlogsContainer.innerHTML = "";
-        toggleBtn.innerHTML = "Show More Insights ↓";
-        isExpanded = false;
-        
-        // Scroll back to the blog section smoothly
-        document.getElementById('medical-blog').scrollIntoView({ behavior: 'smooth' });
-    }
+  if (!isExpanded) {
+    // Show More
+    extraBlogsContainer.innerHTML = additionalMedicalBlogs;
+    toggleBtn.innerHTML = "Show Less ↑";
+    isExpanded = true;
+
+    // If you are using AOS, refresh it to recognize new elements
+    if (typeof AOS !== "undefined") AOS.refresh();
+  } else {
+    // Show Less
+    extraBlogsContainer.innerHTML = "";
+    toggleBtn.innerHTML = "Show More Insights ↓";
+    isExpanded = false;
+
+    // Scroll back to the blog section smoothly
+    document
+      .getElementById("medical-blog")
+      .scrollIntoView({ behavior: "smooth" });
+  }
 }
