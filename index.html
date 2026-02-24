@@ -66,18 +66,22 @@
           <nav>
             <ul>
               <li class="dropdown">
-                <a href="javascript:void(0)" class="drop-btn">
-                  Home <i class="fa-solid fa-caret-down"></i>
-                </a>
+                <a href="./index.html">Home</a>
+
+                <span class="drop-toggle">
+                  <i class="fa-solid fa-caret-down"></i>
+                </span>
+
                 <ul class="dropdown-menu">
                   <li><a href="./home2.html">Home 2</a></li>
                 </ul>
               </li>
 
-              <li><a href="./error.html">About</a></li>
-              <li><a href="./error.html">Services</a></li>
-              <li><a href="./error.html">Blog</a></li>
-              <li><a href="./error.html">Contact Us</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+              <li><a href="./dashboard.html">Dashboard</a></li>
             </ul>
           </nav>
 
@@ -105,30 +109,43 @@
 
       <div class="sidebar" id="sidebar">
         <ul>
-          <li data-aos="fade-up-right" data-aos-delay="100">
-            <a href="./error.html">Home</a>
+          <li
+            class="has-dropdown menu-item"
+            data-aos="fade-up-right"
+            data-aos-delay="100"
+          >
+            <div class="dropdown-header">
+              <a href="./index.html">Home</a>
+              <span class="drop-caret" id="home-caret">▾</span>
+            </div>
+            <ul class="submenu" id="home-dropdown">
+              <li><a href="./home2.html">Home 2</a></li>
+            </ul>
           </li>
-          <li data-aos="fade-up-right" data-aos-delay="150">
-            <a href="./error.html">About</a>
+
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="150">
+            <a href="./about.html">About</a>
           </li>
-          <li data-aos="fade-up-right" data-aos-delay="200">
-            <a href="./error.html">Services</a>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="200">
+            <a href="./service.html">Services</a>
           </li>
-          <li data-aos="fade-up-right" data-aos-delay="250">
-            <a href="./error.html">Blog</a>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="250">
+            <a href="./blog.html">Blog</a>
           </li>
-          <li data-aos="fade-up-right" data-aos-delay="300">
-            <a href="./error.html">Contact Us</a>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="300">
+            <a href="./contact.html">Contact Us</a>
+          </li>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="350">
+            <a href="./dashboard.html">Dashboard</a>
+          </li>
+          <li class="menu-item" data-aos="fade-up-right" data-aos-delay="400">
+            <a href="./login.html">Login</a>
           </li>
         </ul>
 
         <div class="sidebar-login">
-          <a href="./login.html" data-aos="fade-up">
-            <button class="login-btn">Login</button>
-          </a>
-
           <a href="./error.html" data-aos="fade-up">
-            <button class="login-btn">Schedule a Appointment</button>
+            <button class="login-btn">Book an Appointment</button>
           </a>
         </div>
       </div>
@@ -787,11 +804,11 @@
           <div class="footer-col">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Our Services</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./service.html">Our Services</a></li>
               <li><a href="#">Doctors</a></li>
               <li><a href="#">Appointments</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="./contact.html">Contact</a></li>
             </ul>
           </div>
 
@@ -851,32 +868,5 @@
   <script src="./gsap.js"></script>
   <script src="./swiper.js"></script>
   <script src="./blog.js"></script>
-
-<!-- Drop Down -->
-
-<script>
-const dropdown = document.querySelector(".dropdown");
-const dropBtn = document.querySelector(".drop-btn");
-const navLinks = document.querySelectorAll("nav ul li a");
-
-dropBtn.addEventListener("click", function (e) {
-  e.stopPropagation();
-  dropdown.classList.toggle("active");
-});
-
-// Close dropdown when clicking outside
-window.addEventListener("click", function () {
-  dropdown.classList.remove("active");
-});
-
-// Close dropdown when clicking any other nav link
-navLinks.forEach(link => {
-  link.addEventListener("click", function () {
-    if (!this.closest(".dropdown")) {
-      dropdown.classList.remove("active");
-    }
-  });
-});
-</script>
 
 </html>
