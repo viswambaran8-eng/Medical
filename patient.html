@@ -159,7 +159,7 @@
           <div class="hero-res-split">
             <div class="hero-res-content">
               <nav class="res-breadcrumb">
-                <a href="./error2.html">Home</a>
+                <a href="./index2.html">Home</a>
                 <span class="res-separator"
                   ><i class="fa-solid fa-chevron-right"></i
                 ></span>
@@ -179,8 +179,10 @@
               <div class="res-search-wrapper">
                 <div class="search-inner">
                   <i class="fa-solid fa-magnifying-glass"></i>
-                  <input type="text" placeholder="Search resources..." />
-                  <button class="btn-search">Search</button>
+                  <input type="text" placeholder="Search resources..." required/>
+                  <a href="./error2.html">
+                    <button class="btn-search">Search</button>
+                  </a>
                 </div>
                 <div class="quick-tags">
                   <span>Popular:</span>
@@ -255,7 +257,9 @@
                 </li>
               </ul>
               <div class="card-action">
-                <button class="btn-primary">Book Online Now</button>
+                <a href="./error2.html">
+                  <button class="btn-primary">Book Online Now</button>
+                </a>
               </div>
             </div>
 
@@ -422,7 +426,8 @@
           <div class="vault-footer">
             <p>
               <i class="fa-solid fa-circle-info"></i> Can't find the form you
-              need? Contact our <a href="./error2.html">Medical Records Department</a>.
+              need? Contact our
+              <a href="./error2.html">Medical Records Department</a>.
             </p>
           </div>
         </div>
@@ -441,9 +446,13 @@
             </p>
             <div class="social-links">
               <a href="./error2.html"><i class="fa-brands fa-instagram"></i></a>
-              <a href="./error2.html"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="./error2.html"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
               <a href="./error2.html"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="./error2.html"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="./error2.html"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
             </div>
           </div>
 
@@ -477,8 +486,10 @@
             <h4>Subscribe Newsletter</h4>
             <p>Get latest updates and medical news straight to your inbox.</p>
             <div class="subscribe-box">
-              <input type="email" placeholder="Enter your email" />
-              <button>Subscribe</button>
+              <input type="email" placeholder="Enter your email" required />
+              <a href="./error2.html">
+                <button>Subscribe</button>
+              </a>
             </div>
           </div>
         </div>
@@ -487,7 +498,6 @@
           <p>© 2026 <strong>MediCare+</strong>. All Rights Reserved.</p>
         </div>
       </footer>
-
 
       <div class="overlay" id="overlay"></div>
     </div>
@@ -672,47 +682,56 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
 
-    const vaultTl = gsap.timeline({
+      const vaultTl = gsap.timeline({
         scrollTrigger: {
-            trigger: ".download-resources",
-            start: "top 80%",
-        }
-    });
+          trigger: ".download-resources",
+          start: "top 80%",
+        },
+      });
 
-    // Header Animation
-    vaultTl.from(".header-content > *", {
-        x: -30,
-        opacity: 1,
-        stagger: 0.15,
-        duration: 0.8
-    })
-    .from(".vault-badge", {
-        scale: 0.8,
-        opacity: 1,
-        duration: 0.6,
-        ease: "back.out(1.7)"
-    }, "-=0.4")
+      // Header Animation
+      vaultTl
+        .from(".header-content > *", {
+          x: -30,
+          opacity: 1,
+          stagger: 0.15,
+          duration: 0.8,
+        })
+        .from(
+          ".vault-badge",
+          {
+            scale: 0.8,
+            opacity: 1,
+            duration: 0.6,
+            ease: "back.out(1.7)",
+          },
+          "-=0.4",
+        )
 
-    // Cards Animation
-    .from(".form-card", {
-        y: 40,
-        opacity: 1,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: "power2.out"
-    }, "-=0.2")
+        // Cards Animation
+        .from(
+          ".form-card",
+          {
+            y: 40,
+            opacity: 1,
+            stagger: 0.1,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.2",
+        );
 
-    // Simple interaction: Download button pulse
-    gsap.to(".btn-download", {
+      // Simple interaction: Download button pulse
+      gsap.to(".btn-download", {
         scale: 1.1,
         duration: 0.8,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        stagger: 0.2
+        stagger: 0.2,
+      });
     });
-});
   </script>
 </html>

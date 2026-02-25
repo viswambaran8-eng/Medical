@@ -253,7 +253,7 @@
               <div class="method-grid">
                 <div class="method-card">
                   <div class="icon-box">
-                    <i class="fa-solid fa-phone-medical"></i>
+                    <i class="fa-solid fa-hospital-user"></i>
                   </div>
                   <div>
                     <h4>Emergency Line</h4>
@@ -373,7 +373,9 @@
               <a href="./error.html"><i class="fa-brands fa-instagram"></i></a>
               <a href="./error.html"><i class="fa-brands fa-facebook-f"></i></a>
               <a href="./error.html"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="./error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="./error.html"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
             </div>
           </div>
 
@@ -407,8 +409,10 @@
             <h4>Subscribe Newsletter</h4>
             <p>Get latest updates and medical news straight to your inbox.</p>
             <div class="subscribe-box">
-              <input type="email" placeholder="Enter your email" />
-              <button>Subscribe</button>
+              <input type="email" placeholder="Enter your email" required />
+              <a href="./error.html">
+                <button>Subscribe</button>
+              </a>
             </div>
           </div>
         </div>
@@ -417,7 +421,6 @@
           <p>© 2026 <strong>MediCare+</strong>. All Rights Reserved.</p>
         </div>
       </footer>
-
 
       <div class="overlay" id="overlay"></div>
     </div>
@@ -475,8 +478,6 @@
   <!-- gsap -->
 
   <script>
-
-
     // 2. Interactive Line Drawing on Form Focus (Handled by CSS transition)
     // But we can add a simple stagger for the inputs initially
     gsap.from(".input-group", {
@@ -533,6 +534,15 @@
       opacity: 0,
       duration: 1,
       ease: "elastic.out(1, 0.3)",
+    });
+  </script>
+
+  <script>
+    const form = document.getElementById("medicalForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Stop default form submission
+      window.location.href = "./error.html"; // Redirect
     });
   </script>
 </html>

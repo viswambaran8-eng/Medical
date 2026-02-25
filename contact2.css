@@ -1142,6 +1142,15 @@ main {
   padding: 50px;
 }
 
+.v2-form-inner h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.v2-form-inner p {
+  margin-bottom: 20px;
+}
+
 .v2-input-wrap {
   position: relative;
   margin-bottom: 30px;

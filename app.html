@@ -492,7 +492,9 @@
               <a href="./error.html"><i class="fa-brands fa-instagram"></i></a>
               <a href="./error.html"><i class="fa-brands fa-facebook-f"></i></a>
               <a href="./error.html"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="./error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="./error.html"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
             </div>
           </div>
 
@@ -526,8 +528,10 @@
             <h4>Subscribe Newsletter</h4>
             <p>Get latest updates and medical news straight to your inbox.</p>
             <div class="subscribe-box">
-              <input type="email" placeholder="Enter your email" />
-              <button>Subscribe</button>
+              <input type="email" placeholder="Enter your email" required />
+              <a href="./error.html">
+                <button>Subscribe</button>
+              </a>
             </div>
           </div>
         </div>
@@ -536,7 +540,6 @@
           <p>© 2026 <strong>MediCare+</strong>. All Rights Reserved.</p>
         </div>
       </footer>
-
 
       <div class="overlay" id="overlay"></div>
     </div>
@@ -644,49 +647,88 @@
       }
     });
   </script>
-<!-- 2 -->
-<script>
+  <!-- 2 -->
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
-    // 1. Entrance Animations
-    gsap.from(".booking-main", { opacity: 0, x: -50, duration: 1, ease: "power3.out" });
-    gsap.from(".booking-sidebar", { opacity: 0, x: 50, duration: 1, ease: "power3.out", delay: 0.2 });
-    gsap.from(".info-item", { opacity: 0, y: 20, stagger: 0.2, duration: 0.8, delay: 0.5 });
+      // 1. Entrance Animations
+      gsap.from(".booking-main", {
+        opacity: 0,
+        x: -50,
+        duration: 1,
+        ease: "power3.out",
+      });
+      gsap.from(".booking-sidebar", {
+        opacity: 0,
+        x: 50,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+      gsap.from(".info-item", {
+        opacity: 0,
+        y: 20,
+        stagger: 0.2,
+        duration: 0.8,
+        delay: 0.5,
+      });
 
-    // 2. Handle Form Submission
-    const form = document.getElementById('appointmentFormV2');
-    
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); 
-        
-        const btn = document.getElementById('finish');
-        const btnText = btn.querySelector('span');
-        const btnIcon = btn.querySelector('i');
+      // 2. Handle Form Submission
+      // Select ALL forms with same ID
+      const forms = document.querySelectorAll("#appointmentFormV2");
 
-        // Loading State
-        btn.style.pointerEvents = "none";
-        btnText.textContent = "Processing Appointment...";
-        btnIcon.className = "fa-solid fa-spinner fa-spin";
-        
-        gsap.to(btn, { scale: 0.95, duration: 0.2 });
+      forms.forEach((form) => {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
 
-        // Simulate Booking Delay
-        setTimeout(() => {
+          // Get the submit button inside THIS form only
+          const btn = form.querySelector("#finish");
+          const btnText = btn.querySelector("span");
+          const btnIcon = btn.querySelector("i");
+
+          // Loading State
+          btn.style.pointerEvents = "none";
+          btnText.textContent = "Processing Appointment...";
+          btnIcon.className = "fa-solid fa-spinner fa-spin";
+
+          if (typeof gsap !== "undefined") {
+            gsap.to(btn, { scale: 0.95, duration: 0.2 });
+          }
+
+          setTimeout(() => {
             // Success State
-            btn.style.background = "./error.html10b981"; 
+            btn.style.background = "#10b981";
             btnText.textContent = "Booked Successfully!";
             btnIcon.className = "fa-solid fa-check-double";
-            
-            gsap.to(btn, { scale: 1.05, duration: 0.4, ease: "back.out(2)" });
-            gsap.to(".booking-main", { backgroundColor: "./error.htmlf0fdf4", duration: 0.5 });
 
-            // THE ALERT
-            alert("Your appointment has been booked! We will contact you shortly.");
-            
-            // Re-enable button
-            btn.style.pointerEvents = "auto";
-        }, 2000);
+            if (typeof gsap !== "undefined") {
+              gsap.to(btn, {
+                scale: 1.05,
+                duration: 0.4,
+                ease: "back.out(2)",
+              });
+
+              gsap.to(".booking-main", {
+                backgroundColor: "#f0fdf4",
+                duration: 0.5,
+              });
+            }
+
+            // Redirect to 404 page
+            // setTimeout(() => {
+            //   window.location.href = "./error.html";
+            // }, 800);
+          }, 2000);
+        });
+      });
     });
-}); 
-</script>
+  </script>
+  <!-- <script>
+    //   const appointmentForm = document.getElementById("appointmentFormV2");
 
+    //   appointmentForm.addEventListener("submit", function (e) {
+    //     e.preventDefault(); // Stop normal form submission
+    //     window.location.href = "./error.html"; // Redirect
+    //   });
+    //
+  </script> -->
 </html>
