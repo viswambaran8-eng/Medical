@@ -408,12 +408,10 @@
           <div class="footer-col">
             <h4>Subscribe Newsletter</h4>
             <p>Get latest updates and medical news straight to your inbox.</p>
-            <div class="subscribe-box">
+            <form id="newsletterForm" class="subscribe-box">
               <input type="email" placeholder="Enter your email" required />
-              <a href="./error.html">
-                <button>Subscribe</button>
-              </a>
-            </div>
+              <button type="submit">Subscribe</button>
+            </form>
           </div>
         </div>
 
@@ -545,4 +543,19 @@
       window.location.href = "./error.html"; // Redirect
     });
   </script>
+
+    <script>
+  const newsletterForm = document.getElementById("newsletterForm");
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default reload
+
+      // If validation passes → redirect
+      if (newsletterForm.checkValidity()) {
+        window.location.href = "./error.html";
+      }
+    });
+  }
+</script>
 </html>

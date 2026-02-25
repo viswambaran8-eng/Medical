@@ -1098,11 +1098,15 @@ main {
   border-radius: 30px;
   position: relative;
   box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
+  color: #ffffff;
 }
 
 .superior-form .input-group {
   position: relative;
   margin-bottom: 30px;
+  color: #fff;
+  color: #a1b4ce;   /* soft gray */
+
 }
 
 .superior-form input, 
@@ -1113,10 +1117,25 @@ main {
   background: transparent;
   border: none;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
   font-size: 16px;
   outline: none;
+  color: #a1b4ce;   /* soft gray */
 }
+
+.input-group input::placeholder {
+  color: #a1b4ce;   /* soft gray */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 1;
+}
+.input-group textarea::placeholder {
+  color: #a1b4ce;   /* soft gray */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 1;
+}
+
+
 
 .superior-form select option { background: #0f172a; }
 

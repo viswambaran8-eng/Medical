@@ -351,12 +351,10 @@
           <div class="footer-col">
             <h4>Subscribe Newsletter</h4>
             <p>Get latest updates and medical news straight to your inbox.</p>
-            <div class="subscribe-box">
+            <form id="newsletterForm" class="subscribe-box">
               <input type="email" placeholder="Enter your email" required />
-              <a href="./error2.html">
-                <button>Subscribe</button>
-              </a>
-            </div>
+              <button type="submit">Subscribe</button>
+            </form>
           </div>
         </div>
 
@@ -396,7 +394,7 @@
           trigger: ".dept-connector",
           start: "top 70%",
         },
-        y: 80,
+        y: 0,
         opacity: 1,
         rotateY: 15,
         stagger: 0.2,
@@ -462,47 +460,61 @@
   </script>
 
   <script>
-  const intakeForm = document.getElementById("v2IntakeForm");
+    const intakeForm = document.getElementById("v2IntakeForm");
 
-  if (intakeForm) {
-    intakeForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+    if (intakeForm) {
+      intakeForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-      const btn = intakeForm.querySelector(".v2-submit-btn");
-      const btnText = btn.querySelector("span");
-      const btnIcon = btn.querySelector("i");
+        const btn = intakeForm.querySelector(".v2-submit-btn");
+        const btnText = btn.querySelector("span");
+        const btnIcon = btn.querySelector("i");
 
-      // 🔄 Processing State
-      btn.disabled = true;
-      btnText.textContent = "Processing...";
-      btnIcon.className = "fa-solid fa-spinner fa-spin";
+        // 🔄 Processing State
+        btn.disabled = true;
+        btnText.textContent = "Processing...";
+        btnIcon.className = "fa-solid fa-spinner fa-spin";
 
-      // Optional smooth scale animation (if GSAP exists)
-      if (typeof gsap !== "undefined") {
-        gsap.to(btn, { scale: 0.95, duration: 0.2 });
-      }
-
-      // Simulate delay
-      setTimeout(() => {
-        // ✅ Done State
-        btnText.textContent = "Processing Complete";
-        btnIcon.className = "fa-solid fa-check-circle";
-        btn.style.background = "#10b981";
-
+        // Optional smooth scale animation (if GSAP exists)
         if (typeof gsap !== "undefined") {
-          gsap.to(btn, { 
-            scale: 1.05, 
-            duration: 0.4, 
-            ease: "back.out(2)" 
-          });
+          gsap.to(btn, { scale: 0.95, duration: 0.2 });
         }
 
-        // Optional redirect after success
-        // setTimeout(() => {
-        //   window.location.href = "./error.html";
-        // }, 1000);
+        // Simulate delay
+        setTimeout(() => {
+          // ✅ Done State
+          btnText.textContent = "Processing Complete";
+          btnIcon.className = "fa-solid fa-check-circle";
+          btn.style.background = "#10b981";
 
-      }, 2000);
+          if (typeof gsap !== "undefined") {
+            gsap.to(btn, {
+              scale: 1.05,
+              duration: 0.4,
+              ease: "back.out(2)",
+            });
+          }
+
+          // Optional redirect after success
+          // setTimeout(() => {
+          //   window.location.href = "./error.html";
+          // }, 1000);
+        }, 2000);
+      });
+    }
+  </script>
+
+    <script>
+  const newsletterForm = document.getElementById("newsletterForm");
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default reload
+
+      // If validation passes → redirect
+      if (newsletterForm.checkValidity()) {
+        window.location.href = "./error2.html";
+      }
     });
   }
 </script>

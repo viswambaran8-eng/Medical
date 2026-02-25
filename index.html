@@ -179,9 +179,11 @@
               care and cutting-edge medicine in a central location.
             </p>
 
-            <button class="btn1" data-aos="fade-right" data-aos-delay="250">
-              Get Started
-            </button>
+            <a href="./error.html">
+              <button class="btn1" data-aos="fade-right" data-aos-delay="250">
+                Get Started
+              </button>
+            </a>
           </div>
         </div>
       </main>
@@ -815,12 +817,10 @@
           <div class="footer-col">
             <h4>Subscribe Newsletter</h4>
             <p>Get latest updates and medical news straight to your inbox.</p>
-            <div class="subscribe-box">
-              <input type="email" placeholder="Enter your email" required/>
-              <a href="./error.html">
-                <button>Subscribe</button>
-              </a>
-            </div>
+            <form id="newsletterForm" class="subscribe-box">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
           </div>
         </div>
 
@@ -852,4 +852,18 @@
   <script src="./gsap.js"></script>
   <script src="./swiper.js"></script>
   <script src="./blog.js"></script>
+  <script>
+  const newsletterForm = document.getElementById("newsletterForm");
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default reload
+
+      // If validation passes → redirect
+      if (newsletterForm.checkValidity()) {
+        window.location.href = "./error.html";
+      }
+    });
+  }
+</script>
 </html>

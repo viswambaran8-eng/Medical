@@ -167,8 +167,7 @@
 
             <p class="hero-desc">
               Affordable preventive checkups designed for every stage of life.
-              Early detection is the smartest investment you can make for your
-              future.
+              Early detection is the smartest investment for your future.
             </p>
 
             <div class="hero-search">
@@ -180,9 +179,7 @@
                   required
                 />
               </div>
-              <a href="./error2.html">
-                <button class="btn-search">Find Package</button>
-              </a>
+              <button class="btn-search" type="button">Find Package</button>
             </div>
 
             <div class="hero-stats-mini">
@@ -444,7 +441,7 @@
           </div>
 
           <div class="cat-grid">
-            <div class="cat-card reveal">
+            <div class="cat-card reveal" id="heart">
               <div class="cat-tag">Advanced</div>
               <div class="cat-img-wrapper">
                 <img
@@ -485,7 +482,7 @@
               </div>
             </div>
 
-            <div class="cat-card reveal featured-cat">
+            <div class="cat-card reveal featured-cat" id="diabetes">
               <div class="cat-tag">Chronic Care</div>
               <div class="cat-img-wrapper">
                 <img
@@ -526,7 +523,7 @@
               </div>
             </div>
 
-            <div class="cat-card reveal">
+            <div class="cat-card reveal" id="women-wellness">
               <div class="cat-tag">Essential</div>
               <div class="cat-img-wrapper">
                 <img
@@ -623,12 +620,10 @@
           <div class="footer-col">
             <h4>Subscribe Newsletter</h4>
             <p>Get latest updates and medical news straight to your inbox.</p>
-            <div class="subscribe-box">
+            <form id="newsletterForm" class="subscribe-box">
               <input type="email" placeholder="Enter your email" required />
-              <a href="./error2.html">
-                <button>Subscribe</button>
-              </a>
-            </div>
+              <button type="submit">Subscribe</button>
+            </form>
           </div>
         </div>
 
@@ -806,4 +801,50 @@
       });
     });
   </script>
+
+  <script>
+    const newsletterForm = document.getElementById("newsletterForm");
+
+    if (newsletterForm) {
+      newsletterForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default reload
+
+        // If validation passes → redirect
+        if (newsletterForm.checkValidity()) {
+          window.location.href = "./error2.html";
+        }
+      });
+    }
+  </script>
+
+
+<script>
+  const searchBtn = document.querySelector(".btn-search");
+  const searchInput = document.querySelector(".hero-search input");
+
+  searchBtn.addEventListener("click", function () {
+    const value = searchInput.value.trim().toLowerCase();
+
+    let targetId = "";
+
+    if (value.includes("heart")) {
+      targetId = "heart";
+    } 
+    else if (value.includes("diabetes")) {
+      targetId = "diabetes";
+    } 
+    else if (value.includes("women")) {
+      targetId = "women-wellness";
+    }
+
+    if (targetId) {
+      const section = document.getElementById(targetId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      alert("Package not found. Try: Heart, Diabetes, Women Wellness");
+    }
+  });
+</script>
 </html>

@@ -179,7 +179,11 @@
               <div class="res-search-wrapper">
                 <div class="search-inner">
                   <i class="fa-solid fa-magnifying-glass"></i>
-                  <input type="text" placeholder="Search resources..." required/>
+                  <input
+                    type="text"
+                    placeholder="Search resources..."
+                    required
+                  />
                   <a href="./error2.html">
                     <button class="btn-search">Search</button>
                   </a>
@@ -366,7 +370,7 @@
                   <span><i class="fa-solid fa-language"></i> EN/ES</span>
                 </div>
               </div>
-              <a href="./error2.html" class="btn-download" download>
+              <a href="./admission.html" class="btn-download" download>
                 <i class="fa-solid fa-arrow-down-to-bracket"></i>
               </a>
             </div>
@@ -383,7 +387,11 @@
                   <span><i class="fa-solid fa-clock"></i> Updated 2024</span>
                 </div>
               </div>
-              <a href="./error2.html" class="btn-download" download>
+              <a
+                href="./insurance-claim-form.html"
+                class="btn-download"
+                download
+              >
                 <i class="fa-solid fa-arrow-down-to-bracket"></i>
               </a>
             </div>
@@ -400,7 +408,7 @@
                   <span><i class="fa-solid fa-lock"></i> Confidential</span>
                 </div>
               </div>
-              <a href="./error2.html" class="btn-download" download>
+              <a href="./consent-form.html" class="btn-download" download>
                 <i class="fa-solid fa-arrow-down-to-bracket"></i>
               </a>
             </div>
@@ -417,7 +425,11 @@
                   <span><i class="fa-solid fa-pen-nib"></i> Fillable PDF</span>
                 </div>
               </div>
-              <a href="./error2.html" class="btn-download" download>
+              <a
+                href="./medical-history-form.html"
+                class="btn-download"
+                download
+              >
                 <i class="fa-solid fa-arrow-down-to-bracket"></i>
               </a>
             </div>
@@ -485,12 +497,10 @@
           <div class="footer-col">
             <h4>Subscribe Newsletter</h4>
             <p>Get latest updates and medical news straight to your inbox.</p>
-            <div class="subscribe-box">
+            <form id="newsletterForm" class="subscribe-box">
               <input type="email" placeholder="Enter your email" required />
-              <a href="./error2.html">
-                <button>Subscribe</button>
-              </a>
-            </div>
+              <button type="submit">Subscribe</button>
+            </form>
           </div>
         </div>
 
@@ -734,4 +744,19 @@
       });
     });
   </script>
+
+    <script>
+  const newsletterForm = document.getElementById("newsletterForm");
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default reload
+
+      // If validation passes → redirect
+      if (newsletterForm.checkValidity()) {
+        window.location.href = "./error2.html";
+      }
+    });
+  }
+</script>
 </html>

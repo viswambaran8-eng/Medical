@@ -787,7 +787,7 @@ main {
 /* --- HERO SECTION --- */
 .package-hero {
   position: relative;
-  padding: 50px 0 50px;
+  padding: 30px 0 50px;
   background: #f8fafc;
   height: 100%;
   display: flex;
@@ -852,6 +852,12 @@ main {
   margin-bottom: 20px;
 }
 
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .text-gradient {
   background: linear-gradient(90deg, #0d6efd, #10b981);
   -webkit-background-clip: text;
@@ -862,7 +868,6 @@ main {
   font-size: 1.2rem;
   color: #64748b;
   max-width: 580px;
-  margin-bottom: 40px;
 }
 
 /* --- SEARCH BAR --- */
@@ -873,9 +878,10 @@ main {
   display: flex;
   gap: 12px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-  margin-bottom: 45px;
+  margin-bottom: 20px;
   max-width: 600px;
   border: 1px solid #e2e8f0;
+  margin-top: 25px;
 }
 
 .search-input-group {
@@ -1065,6 +1071,7 @@ main {
     padding-top: 10px;
     margin-bottom: 40px;
   }
+
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -1073,9 +1080,12 @@ main {
   .hero-desc { margin-left: auto; margin-right: auto; }
   .hero-search { width: 100%; }
   .hero-stats-mini { justify-content: center; }
-  .hero-visual { margin-top: 100px; }
+  .hero-visual { margin-top: 20px; }
   .tag-top { right: 10%; }
   .tag-bottom { left: 10%; }
+.scroll-down  {
+  display: none;
+}
 }
 
 @media (max-width: 576px) {
@@ -1271,7 +1281,7 @@ main {
 }
 
 .cat-body {
-  padding: 35px;
+  padding: 20px 35px;
   flex-grow: 1;
 }
 
