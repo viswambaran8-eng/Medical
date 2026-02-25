@@ -254,18 +254,19 @@
                   <div class="step-actions">
                     <button
                       type="button"
-                      class="back-btn"
-                      onclick="goToStep(1)"
-                    >
-                      Back
-                    </button>
-                    <button
-                      type="button"
                       class="next-step-btn"
                       onclick="goToStep(3)"
                     >
                       Next: Finalize <i class="fa-solid fa-arrow-right"></i>
                     </button>
+                    <button
+                      type="button"
+                      class="back-btn"
+                      onclick="goToStep(1)"
+                    >
+                      Back
+                    </button>
+                    
                   </div>
                 </div>
 
@@ -296,13 +297,19 @@
                     ></textarea>
                   </div>
 
-                  <button type="submit" id="finish" class="confirm-btn">
-                    <span>Initialize Booking</span>
-                    <i class="fa-solid fa-calendar-check"></i>
-                  </button>
-                  <button type="button" class="back-btn" onclick="goToStep(2)">
-                    Back
-                  </button>
+                  <div class="step-actions">
+                    <button type="submit" id="finish" class="confirm-btn">
+                      <span>Initialize Booking</span>
+                      <i class="fa-solid fa-calendar-check"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="back-btn"
+                      onclick="goToStep(2)"
+                    >
+                      Back
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -348,7 +355,8 @@
                       type="text"
                       placeholder="Date of Birth (Optional)"
                       onfocus="this.type = 'date'"
-                     required/>
+                      required
+                    />
                   </div>
                 </div>
 
@@ -722,67 +730,63 @@
   </script>
 
   <script>
-  const newsletterForm = document.getElementById("newsletterForm");
+    const newsletterForm = document.getElementById("newsletterForm");
 
-  if (newsletterForm) {
-    newsletterForm.addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent default reload
+    if (newsletterForm) {
+      newsletterForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default reload
 
-      // If validation passes → redirect
-      if (newsletterForm.checkValidity()) {
-        window.location.href = "./error.html";
+        // If validation passes → redirect
+        if (newsletterForm.checkValidity()) {
+          window.location.href = "./error.html";
+        }
+      });
+    }
+  </script>
+
+  <script>
+    function goToStep(step) {
+      // STEP 1 VALIDATION
+      if (step === 2) {
+        const dept = document.getElementById("deptSelect");
+        const doctor = document.getElementById("doctorSelect");
+
+        if (!dept.value) {
+          dept.reportValidity();
+          return;
+        }
+
+        if (!doctor.value) {
+          doctor.reportValidity();
+          return;
+        }
       }
-    });
-  }
-</script>
 
+      // STEP 2 VALIDATION
+      if (step === 3) {
+        const activeDate = document.querySelector(".calendar-day.active");
+        const activeSlot = document.querySelector(".slot.active");
 
+        if (!activeDate) {
+          alert("Please select a date.");
+          return;
+        }
 
+        if (!activeSlot) {
+          alert("Please select a time slot.");
+          return;
+        }
+      }
 
-<script>
-function goToStep(step) {
+      // Hide all steps
+      document.querySelectorAll(".booking-step").forEach((el) => {
+        el.classList.remove("active");
+      });
 
-  // STEP 1 VALIDATION
-  if (step === 2) {
-    const dept = document.getElementById("deptSelect");
-    const doctor = document.getElementById("doctorSelect");
-
-    if (!dept.value) {
-      dept.reportValidity();
-      return;
+      // Show target step
+      document.getElementById("step" + step).classList.add("active");
     }
-
-    if (!doctor.value) {
-      doctor.reportValidity();
-      return;
-    }
-  }
-
-  // STEP 2 VALIDATION
-  if (step === 3) {
-    const activeDate = document.querySelector(".calendar-day.active");
-    const activeSlot = document.querySelector(".slot.active");
-
-    if (!activeDate) {
-      alert("Please select a date.");
-      return;
-    }
-
-    if (!activeSlot) {
-      alert("Please select a time slot.");
-      return;
-    }
-  }
-
-  // Hide all steps
-  document.querySelectorAll(".booking-step").forEach(el => {
-    el.classList.remove("active");
-  });
-
-  // Show target step
-  document.getElementById("step" + step).classList.add("active");
-}
-</script>
+  </script>
 
   <!-- <script>
     //   const appointmentForm = document.getElementById("appointmentFormV2");

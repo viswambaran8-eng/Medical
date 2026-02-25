@@ -963,7 +963,8 @@ main {
 
 /* BUTTONS */
 .next-step-btn,
-.confirm-btn {
+.confirm-btn ,
+.back-btn {
   width: max-content;
   background: #0ea5e9;
   color: #fff;
@@ -973,7 +974,6 @@ main {
   font-weight: 700;
   cursor: pointer;
   transition: 0.3s;
-  margin-bottom: 10px;
 }
 .next-step-btn:hover,
 .confirm-btn:hover {
@@ -982,14 +982,12 @@ main {
 .back-btn {
   width: max-content;
   background: gray;
-  padding: 18px 30px;
+  /* padding: 15px 30px; */
   border: none;
-  border-radius: 12px;
   color: white;
   cursor: pointer;
-  font-weight: 600;
-  margin-right: 20px;
   transition: all 0.6s ease-in-out;
+  height: 52px;
 }
 
 .back-btn:hover {
@@ -1056,15 +1054,14 @@ main {
 
 .step-actions {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
 }
 
 @media screen and (max-width: 768px) {
   .step-actions {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
     gap: 15px;
   }
 }
