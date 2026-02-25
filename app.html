@@ -266,7 +266,6 @@
                     >
                       Back
                     </button>
-                    
                   </div>
                 </div>
 
@@ -778,13 +777,31 @@
         }
       }
 
+      // -------------------------
+      // STEP SWITCHING
+      // -------------------------
+
       // Hide all steps
       document.querySelectorAll(".booking-step").forEach((el) => {
         el.classList.remove("active");
       });
 
-      // Show target step
-      document.getElementById("step" + step).classList.add("active");
+      // Show selected step
+      const targetStep = document.getElementById("step" + step);
+      if (targetStep) {
+        targetStep.classList.add("active");
+      }
+
+      // -------------------------
+      // UPDATE SIDEBAR PILLS
+      // -------------------------
+      document.querySelectorAll(".step-pill").forEach((pill) => {
+        pill.classList.remove("active");
+
+        if (parseInt(pill.getAttribute("data-step")) === step) {
+          pill.classList.add("active");
+        }
+      });
     }
   </script>
 

@@ -1004,7 +1004,7 @@ main {
 
 /* CONTACT SECTION BASE */
 .contact-hub {
-  padding: 100px 0;
+  padding: 100px 20px;
   background: #ffffff;
   overflow: hidden;
   color: #0f172a;
@@ -1015,6 +1015,7 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: flex-start;
+  padding: 20px;
 }
 
 /* LEFT SIDE: INFO */
