@@ -1383,11 +1383,11 @@ main {
   background: #0ea5e9;
   color: #fff;
   border: none;
-  padding: 18px 40px;
+  padding: 18px 30px;
   border-radius: 12px;
   font-weight: 700;
   cursor: pointer;
-  width: 100%;
+  width: max-content;
   margin-top: 20px;
   transition: 0.3s;
 }
@@ -1402,7 +1402,7 @@ main {
 /* 1. Base Grid (Desktop First) */
 .booking-grid {
   display: grid;
-  grid-template-columns: 1fr 380px; /* Two columns on desktop */
+  grid-template-columns: 1fr 480px; /* Two columns on desktop */
   background: #fff;
   border-radius: 30px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
