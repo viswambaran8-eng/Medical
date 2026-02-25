@@ -964,6 +964,7 @@ main {
 /* BUTTONS */
 .next-step-btn,
 .confirm-btn {
+  width: max-content;
   background: #0ea5e9;
   color: #fff;
   border: none;
@@ -972,18 +973,28 @@ main {
   font-weight: 700;
   cursor: pointer;
   transition: 0.3s;
+  margin-bottom: 10px;
 }
 .next-step-btn:hover,
 .confirm-btn:hover {
   background: #0f172a;
 }
 .back-btn {
-  background: none;
+  width: max-content;
+  background: gray;
+  padding: 18px 30px;
   border: none;
-  color: #64748b;
+  border-radius: 12px;
+  color: white;
   cursor: pointer;
   font-weight: 600;
   margin-right: 20px;
+  transition: all 0.6s ease-in-out;
+}
+
+.back-btn:hover {
+  background: skyblue;
+  color: black;
 }
 
 /* MEDIA QUERIES */
@@ -1046,6 +1057,16 @@ main {
 .step-actions {
   display: flex;
   gap: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .step-actions {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
 }
 
 /* ------------------------------------------------------------------------- */
@@ -1333,7 +1354,7 @@ main {
   background: #0f172a;
   padding: 35px 20px;
   color: #fff;
-    order: -1;
+  order: -1;
 }
 .sidebar-title {
   font-size: 2rem;
@@ -1398,7 +1419,6 @@ main {
   }
 }
 
-
 /* 1. Base Grid (Desktop First) */
 .booking-grid {
   display: grid;
@@ -1413,14 +1433,11 @@ main {
 
 /* 2. Responsive Breakpoints */
 
-
-
 /* Mobile & Small Tablets */
 @media (max-width: 992px) {
   .booking-grid {
     grid-template-columns: 1fr; /* Stack into a single column */
   }
-
 
   .sidebar-title {
     font-size: 1.6rem;
@@ -1438,7 +1455,7 @@ main {
   .appointment-v2-section {
     padding: 40px 15px; /* Less section padding on tiny screens */
   }
-  
+
   .booking-main {
     padding: 25px 20px;
   }
